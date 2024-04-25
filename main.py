@@ -25,7 +25,7 @@ conversations = init_model()
 def to_mark(text):
     return markdown.markdown(text)
 
-@app.route("/", methods=["POST","GET"])
+@app.route("/home", methods=["POST","GET"])
 def home():
     
     
