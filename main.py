@@ -41,7 +41,7 @@ def home():
 
         conversations_history.append({'role': 'user','text': user_input})
         conversations_history.append({'role': 'model','text': to_mark(chat.text)})
-        print(to_mark(chat.text))
+        # print(to_mark(chat.text))
 
         # formated model reponse
         # model_reponse_markdown = markdown.markdown(conversations.text)
