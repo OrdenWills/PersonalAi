@@ -4,13 +4,18 @@ import os
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 
+
+load_dotenv("./keys.env")
+
 app = Flask(__name__)
 app.secret_key = os.environ.get("APP_PASSWORD")
 
+
 def init_model():
     # Set the API key
-    Googleapi_key = os.environ.get('GOOGLE_API_KEY')
-    genai.configure(api_key=Googleapi_key)
+    GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+    print(GOOGLE_API_KEY)
+    genai.configure(api_key=GOOGLE_API_KEY)
 
         # initialize the model
     model = genai.GenerativeModel('gemini-pro')
